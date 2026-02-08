@@ -4,6 +4,65 @@
   <meta charset="UTF-8">
   <title>CS 460W Software Development</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+    }
+    .tab-button {
+      padding: 10px 20px;
+      background-color: #e0e0e0;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+    }
+    .tab-button.active {
+      background-color: #333;
+      color: #fff;
+      border-bottom-color: #4CAF50;
+    }
+    .tab-content {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .week-entry {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-left: 4px solid #4CAF50;
+    }
+    .week-entry h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    .week-entry ul {
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,6 +76,64 @@
       <li>Natasha Williams</li>
     </ul>
   </header>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab(event, 'overview')">Overview</button>
+    <button class="tab-button" onclick="showTab(event, 'weekly-updates')">Weekly Updates</button>
+  </div>
+
+  <div id="overview" class="tab-content active">
+    <h2>Project Overview</h2>
+    <p>Welcome to the Mountain Coders CS 460W Software Development project page.</p>
+  </div>
+
+  <div id="weekly-updates" class="tab-content">
+    <h2>Weekly Updates</h2>
+    
+    <div class="week-entry">
+      <h3>Week of January 26 - February 1, 2026</h3>
+      <ul>
+        <li>Update 1</li>
+        <li>Update 2</li>
+        <li>Update 3</li>
+      </ul>
+    </div>
+
+    <div class="week-entry">
+      <h3>Week of February 8 - 14, 2026</h3>
+      <ul>
+        <li>Update 1</li>
+        <li>Update 2</li>
+        <li>Update 3</li>
+      </ul>
+    </div>
+
+    <div class="week-entry">
+      <h3>Week of February 15 - 21, 2026</h3>
+      <ul>
+        <li>Update 1</li>
+        <li>Update 2</li>
+        <li>Update 3</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+    function showTab(evt, tabName) {
+      var i, tabcontent, tabbuttons;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tabbuttons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
 
 </body>
 </html>
