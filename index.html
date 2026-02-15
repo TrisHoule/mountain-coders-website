@@ -11,12 +11,17 @@
             line-height: 1.6;
         }
 
-        /* Header */
         header {
             background-color: #1f2933;
             color: white;
             padding: 20px;
             text-align: center;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
         h1 {
@@ -27,33 +32,6 @@
             margin-top: 0;
             font-weight: normal;
             color: #d1d5db;
-        }
-
-        /* Top Navigation Bar */
-        .topnav {
-            background-color: #111827;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 15px;
-        }
-
-        .topnav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s ease;
-        }
-
-        .topnav a:hover {
-            color: #60a5fa;
-        }
-
-        /* Main Content */
-        .content {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
         }
 
         h3 {
@@ -96,53 +74,58 @@
     <header>
         <h1>CS 460W Software Development</h1>
         <h2>Team Mountain Coders</h2>
-        <p>Tris Houle | Mori Kreider | Natasha Williams</p>
+        <h3>Members:</h3>
+        <ul>
+            <li>Tris Houle</li>
+            <li>Mori Kreider</li>
+            <li>Natasha Williams</li>
+        </ul>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav class="topnav">
-        <a href="#">Home</a>
-        <a href="#">Weekly Updates</a>
-        <a href="#">Database Design</a>
-        <a href="#">Login</a>
-    </nav>
-
-    <div class="content">
+    <nav>
         <h3>Weekly Updates</h3>
 
         <div class="week">
             <h4>January 26 - February 1</h4>
-            <p>
-                During this week, we focused on laying the foundation for our project. This included gathering the group members together, creating rapport between all of us, and reading over the project specifications until we understood what we were being asked.
-                <br><br>
-                We decided to focus on Data Science and Computer Science as our two majors of focus. English and Economics are the two minors we landed on.
-                <br><br>
-                As for figuring out the course offerings, we made plans to combine the information for each year’s offerings from Fall 2020 to the present into a MySQL database table along with the other requirements for the project (such as usernames and passwords). We also began working to set up the database.
-            </p>
+            <ul>
+                <li>
+                    During this week, we focused on laying the foundation for our project. This included gathering the group members together, creating rapport between all of us, and reading over the project specifications until we understood what we were being asked.
+                    <br><br>
+                    We decided to focus on Data Science and Computer Science as our two majors of focus. English and Economics are the two minors we landed on.
+                    <br><br>
+                    As for figuring out the course offerings, we made plans to combine the information for each year’s offerings from Fall 2020 to the present into a MySQL database table along with the other requirements for the project (such as usernames and passwords). We also began working to set up the database.
+                </li>
+            </ul>
         </div>
 
         <div class="week">
             <h4>February 2 - 8</h4>
-            <p>
-                During this week, we continued working on the visual interface of the website. We also began inserting values into the tables we created and set up a file scaffold for future project use.
-                <br><br>
-                Next week, we plan to continue setting up and inserting values into the tables. We also want to keep improving the website and finalize the user login process.
-                <br><br>
-                None of us have much experience using GitHub collaboratively, so we are currently working through that learning curve. We are overcoming this by communicating consistently and using online videos and other resources to guide us.
-            </p>
+            <ul>
+                <li>
+                    During this week, we continued working on the visual interface of the website. We also began inserting values into the tables we created and set up a file scaffold for future project use.
+                    <br><br>
+                    Next week, we plan to continue setting up and inserting values into the tables. We also want to keep improving the website and finalize the user login process.
+                    <br><br>
+                    None of us have much experience using GitHub collaboratively, so we are currently working through that learning curve. We are overcoming this by communicating consistently and using online videos and other resources to guide us.
+                </li>
+            </ul>
         </div>
 
         <div class="week">
             <h4>February 9 - 15</h4>
-            <p></p>
+            <ul>
+                <li></li>
+            </ul>
         </div>
 
         <div class="week">
             <h4>February 16 - 22</h4>
-            <p></p>
+            <ul>
+                <li></li>
+            </ul>
         </div>
 
-    </div>
+    </nav>
 
 </body>
 </html>
