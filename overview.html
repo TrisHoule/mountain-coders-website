@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Overview • Mountain Coders</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e2e8f0;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e2e8f0;
+      font-size: 0.85rem;
+    }
+
+    nav a:hover {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(15,23,42,0.85);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: #22c55e;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    ul {
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Project Overview</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="weekly.html">Weekly Updates</a>
+  <a href="srs.html">SRS</a>
+  <a href="testplan.html">Test Plan</a>
+</nav>
+
+<div class="container">
+
+  <div class="card">
+    <h2>DegreeAdmin</h2>
+    <ul>
+      <li>A web-based system designed to simplify academic planning for both students and academic advisors.</li>
+      <li>The platform provides a centralized interface where users can manage, review, and adjust academic progress in a structured and efficient way.</li>
+    </ul>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>What the System Does</h3>
+      <ul>
+        <li>Allows students to select and manage multiple majors and minors within a single system</li>
+        <li>Automatically generates required courses, prerequisites, and dependencies based on selections</li>
+        <li>Builds structured semester-by-semester schedules to guide students toward graduation</li>
+        <li>Provides role-based access so students, faculty, and administrators interact with tailored interfaces</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Key Benefits</h3>
+      <ul>
+        <li>Reduces confusion surrounding complex degree requirements and academic pathways</li>
+        <li>Helps students plan more efficiently and minimize delays in graduation timelines</li>
+        <li>Improves decision-making through clearer visibility into long-term academic goals</li>
+        <li>Supports faculty by streamlining advising and approval processes for course plans</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>What’s The Problem?</h3>
+      <ul>
+        <li>Students often struggle to plan complex academic requirements while balancing multiple majors and minors</li>
+        <li>Prerequisites, limited course availability, and scheduling conflicts make planning difficult and confusing</li>
+        <li>It can be unclear whether a student is on track to graduate within their intended timeframe</li>
+        <li>Academic advising is frequently a manual process that can be time-consuming and inconsistent</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Why This Matters</h3>
+      <ul>
+        <li>Poor academic planning can lead to increased costs and delayed graduation</li>
+        <li>Students often lack visibility into long-term requirements and dependencies</li>
+        <li>Faculty and advisors spend significant time reviewing and correcting student schedules</li>
+        <li>Without structured tools, planning becomes inefficient and prone to error</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h3>Our Motivations</h3>
+    <ul>
+      <li>Create a system that simplifies and streamlines the academic planning process</li>
+      <li>Help students make informed, confident decisions about their academic paths</li>
+      <li>Provide a structured and automated way to evaluate graduation progress and requirements</li>
+      <li>Improve the overall experience for both students and faculty through better tools and organization</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
 
