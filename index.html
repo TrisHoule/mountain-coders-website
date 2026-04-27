@@ -1,1 +1,122 @@
-<li>This week, we began adding the weekly updates to the GitHub pages website as well as getting the login page working on the project site. We each also created a design prototype for what we want the final project website to look like. Next week, we will continue inputting class values and information into the project database as well as figure out what exactly we want the final design prototype to look like (Combining all our individual ideas)</li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS460W: Mountain Coders</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #f1f5f9;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .tab {
+      padding: 12px 24px;
+      background: #1e293b;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tab:hover, .tab.active {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .bio {
+      display: none;
+    }
+
+    .bio.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mountain Coders</h1>
+    <p>CS460W Project Team</p>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showBio('tris')">Tris Houle</div>
+    <div class="tab" onclick="showBio('mori')">Mori Kreider</div>
+    <div class="tab" onclick="showBio('natasha')">Natasha Williams</div>
+  </div>
+
+  <div class="content">
+    <div id="tris" class="bio active">
+      <h2>Tris Houle</h2>
+      <p>
+        Add your bio here. Talk about your role, interests, and what you contributed to the Mountain Coders project.
+      </p>
+    </div>
+
+    <div id="mori" class="bio">
+      <h2>Mori Kreider</h2>
+      <p>
+        Add Mori's bio here. Include skills, background, and contributions.
+      </p>
+    </div>
+
+    <div id="natasha" class="bio">
+      <h2>Natasha Williams</h2>
+      <p>
+        Add Natasha's bio here. Highlight strengths and responsibilities in the project.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function showBio(name) {
+      document.querySelectorAll('.bio').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+      document.getElementById(name).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
