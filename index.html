@@ -8,13 +8,13 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      color: #f1f5f9;
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+      color: #1e293b;
     }
 
     header {
       text-align: center;
-      padding: 60px 20px 30px;
+      padding: 60px 20px 20px;
     }
 
     header h1 {
@@ -24,37 +24,60 @@
 
     header p {
       font-size: 1.2rem;
-      color: #94a3b8;
+      color: #475569;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #38bdf8;
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #0ea5e9;
     }
 
     .tabs {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin: 30px 0;
+      margin: 20px 0;
     }
 
     .tab {
-      padding: 12px 24px;
-      background: #1e293b;
+      padding: 10px 20px;
+      background: white;
       border-radius: 999px;
       cursor: pointer;
+      border: 1px solid #cbd5f5;
       transition: 0.3s;
     }
 
     .tab:hover, .tab.active {
       background: #38bdf8;
-      color: #0f172a;
+      color: white;
     }
 
     .content {
       max-width: 800px;
       margin: auto;
       padding: 30px;
-      background: rgba(30, 41, 59, 0.6);
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 20px;
       backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
     .bio {
@@ -79,6 +102,13 @@
     <p>CS460W Project Team</p>
   </header>
 
+  <nav>
+    <a href="weekly.html">Weekly Updates</a>
+    <a href="overview.html">Project Overview</a>
+    <a href="srs.html">Software Requirements Spec</a>
+    <a href="testplan.html">Test Plan</a>
+  </nav>
+
   <div class="tabs">
     <div class="tab active" onclick="showBio('tris')">Tris Houle</div>
     <div class="tab" onclick="showBio('mori')">Mori Kreider</div>
@@ -88,23 +118,17 @@
   <div class="content">
     <div id="tris" class="bio active">
       <h2>Tris Houle</h2>
-      <p>
-        Add your bio here. Talk about your role, interests, and what you contributed to the Mountain Coders project.
-      </p>
+      <p>Add your bio here.</p>
     </div>
 
     <div id="mori" class="bio">
       <h2>Mori Kreider</h2>
-      <p>
-        Add Mori's bio here. Include skills, background, and contributions.
-      </p>
+      <p>Add Mori's bio here.</p>
     </div>
 
     <div id="natasha" class="bio">
       <h2>Natasha Williams</h2>
-      <p>
-        Add Natasha's bio here. Highlight strengths and responsibilities in the project.
-      </p>
+      <p>Add Natasha's bio here.</p>
     </div>
   </div>
 
