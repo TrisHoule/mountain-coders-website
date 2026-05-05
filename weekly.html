@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Weekly Updates • Mountain Coders</title>
 
   <style>
@@ -39,7 +39,10 @@
       font-size: 0.85rem;
     }
 
-    nav a:hover { background: #38bdf8; color: #020617; }
+    nav a:hover {
+      background: #38bdf8;
+      color: #020617;
+    }
 
     .tabs {
       display: flex;
@@ -58,7 +61,10 @@
       font-size: 0.8rem;
     }
 
-    .tab.active { background: #38bdf8; color: #020617; }
+    .tab.active {
+      background: #38bdf8;
+      color: #020617;
+    }
 
     .container {
       max-width: 900px;
@@ -95,7 +101,6 @@
 </nav>
 
 <div class="tabs">
-  <!-- Weeks aligned around midterm (March 11) -->
   <div class="tab active" onclick="showWeek('w1')">Feb 1</div>
   <div class="tab" onclick="showWeek('w2')">Feb 8</div>
   <div class="tab" onclick="showWeek('w3')">Feb 15</div>
@@ -117,132 +122,103 @@
     <div id="w1" class="week active">
       <h2>February 1</h2>
       <p>
-        During this week, we focused on laying the foundation for our project. This included bringing the group together, building team rapport, and carefully reviewing the project specifications to ensure a clear understanding of the requirements.
+        During this week, we focused on laying the foundation for our project. This included gathering the group members together, creating rapport between all of us, and reading over the project specifications until we understood what we were being asked.
       </p>
       <p>
-        We selected Data Science and Computer Science as our primary majors, with English and Economics as the chosen minors.
+        We decided to focus on Data Science and Computer Science as our two majors of focus. English and Economics are the two minors we landed on.
       </p>
       <p>
-        We also began planning how to structure course offerings by compiling data from Fall 2020 to the present into a MySQL database. In addition, we started setting up the database and outlining how user data (such as usernames and passwords) would be managed.
+        As for figuring out the course offerings, we made plans to combine the information for each year’s offerings from Fall 2020 to the present into a MYSQL database table along with the other requirements for the project (Such as usernames and passwords). We also began working to set up the database.
       </p>
     </div>
+
     <div id="w2" class="week">
       <h2>February 8</h2>
       <p>
-        This week, we continued developing the visual interface of the website, focusing on layout and usability.
-      </p>
-      <p>
-        We also began inserting values into the database tables we created and established a file scaffold to support future development and organization of the project.
+        We continued working on the visual interface of the website, and we started inserting values into the tables we created this week as well as created a file scaffold for project use in the future.
       </p>
     </div>
+
     <div id="w3" class="week">
       <h2>February 15</h2>
       <p>
         This week, we began adding weekly updates to the GitHub Pages website while also getting the login page functional on the project site.
       </p>
       <p>
-        Additionally, each team member created an individual design prototype for the final website, helping guide the overall visual direction of the project.
+        Additionally, each team member created an individual design prototype for the final website.
       </p>
     </div>
+
     <div id="w4" class="week">
       <h2>February 22</h2>
       <p>
         This week, all database tables were created and we began inserting values for testing, including course data.
       </p>
       <p>
-        On the design side, we produced the first combined prototype by merging elements from each team member’s individual designs into a single cohesive layout.
+        We also created a combined design prototype using each member’s ideas.
       </p>
     </div>
+
     <div id="w5" class="week">
       <h2>March 1</h2>
       <p>
-        This week, we implemented CSS styling for the website and created dedicated hub pages for each of the three user types.
+        This week, we implemented CSS styling and created hub pages for each user type.
       </p>
       <p>
-        We also began working on the logout functionality while continuing to populate database tables and define relationships between them.
+        We also continued working on database relationships and logout functionality.
       </p>
     </div>
+
     <div id="w6" class="week">
       <h2>March 8</h2>
       <p>
-        This week was primarily focused on preparing the midterm report. As a team, we collaborated to make significant progress on the document and ensured it would be completed before the submission deadline.
+        This week was focused on completing the midterm report and ensuring everything was ready for submission.
       </p>
     </div>
 
     <div id="midterm" class="week">
       <h2>Midterm Report • March 11</h2>
-
-      <div class="section">
-        <h3>INTRO</h3>
-        <p>
-        For our semester project in CS460W, each student was tasked to form a group to make a website. The website would act as a college interface, allowing students, faculty, and administrators to view and edit schedules in one convenient location. They would also have to do a number of other tasks depending on their respective roles, such as a student changing a major and a faculty member approving or denying student co-op requests.
-        </p>
-      </div>
-
-      <div class="section">
-        <h3>THINGS WE’VE DONE</h3>
-        <p>
-        After creating our group, the first order of business was to familiarize ourselves with the project requirements as well as create a meeting schedule and a group name. We all wrote down the requirements being asked of us, breaking them into manageable chunks to make the larger project seem less daunting. Around the same time, we also created our team's name, Mountain Coders. From the first week onward, we decided to come together in person on a weekly basis for a couple hours every Sunday morning. This schedule has persisted thus far.
-        </p>
-
-        <p>
-        The first order of business after our schedule was in order, was to decide on the foundations of the project. We decided to use a MySQL database as well as a PHP interface with CSS to create the mock website for the project. We then chose Data Science and Computer Science as our majors of focus, and English and Economics as our minors. At this point, we created a project GitHub as well as a GitHub Pages page for project progress.
-        </p>
-
-        <p>
-        During the next weeks, we focused on setting up the database tables as well as populating them with all the information they needed. This included major and minor requirements, usernames and passwords, and different roles each user could have. We also worked on linking these tables together to create an effective database infrastructure. Using this database setup, we were able to create the login page that the user would interface with. We populated a users table with each user and their information, creating passwords that fit the project requirements. Depending on the role of the user, the login page would then take the user to a different homepage. This would allow for different interface options between students, faculty, and administrators. Once the homepages were created, we then began creating a logout interface as well as other pages to host courses, profile information, and other important tasks that each role had to be able to complete.
-        </p>
-
-        <p>
-        This all brought us to the design aspect of the website. We each created a design prototype for what we thought the website should look like, and using that baseline, a final prototype was created that combined all the elements into one coherent site. Using CSS, we began making the website pages that we have already completed look more pleasing to the eye.
-        </p>
-      </div>
-
+      <p>
+        (Midterm content already added earlier)
+      </p>
     </div>
 
     <div id="w7" class="week">
       <h2>March 29</h2>
       <p>
-        This week, we began implementing the password change procedure and continued development of the logout functionality.
-      </p>
-      <p>
-        We also conducted extensive testing of the login system, applying concepts from the testing presentation covered in class.
+        We began implementing password changes and continued developing logout functionality while testing login behavior.
       </p>
     </div>
+
     <div id="w8" class="week">
       <h2>April 5</h2>
       <p>
-        This week, we reviewed presentation requirements and continued development on password changing and logout features while planning the remaining work for the semester.
-      </p>
-      <p>
-        We also completed inserting all required values into the database tables.
+        We reviewed presentation requirements, continued development, and completed database population.
       </p>
     </div>
+
     <div id="w9" class="week">
       <h2>April 12</h2>
       <p>
-        This week, we continued developing both the presentation and the project website.
-      </p>
-      <p>
-        Our time was split between optimizing existing pages and continuing development on unfinished components.
+        Continued working on both the website and presentation.
       </p>
     </div>
+
     <div id="w10" class="week">
       <h2>April 19</h2>
       <p>
-        This week, we focused on structuring our final presentation and assigning speaking roles.
-      </p>
-      <p>
-        We also continued refining the project website in preparation for the end of the semester.
+        We focused on structuring the presentation and refining the website.
       </p>
     </div>
+
     <div id="w11" class="week">
       <h2>April 26</h2>
+    </div>
+
+    <div id="w12" class="week">
+      <h2>May 3</h2>
       <p>
-        This week, we completed the implementation of the logout and profile interfaces and added functionality for users to change their passwords according to project specifications.
-      </p>
-      <p>
-        We also finalized our PowerPoint presentation in preparation for presenting on April 29.
+        This week, we finished co-op requests and major/minor change requests. We also completed most of the supplementary website as well as added the ability to view current schedules. Finally, we finished developing the presentation as well as presented our project to the class.
       </p>
     </div>
 
@@ -253,7 +229,6 @@
   function showWeek(id) {
     document.querySelectorAll('.week').forEach(w => w.classList.remove('active'));
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-
     document.getElementById(id).classList.add('active');
     event.target.classList.add('active');
   }
