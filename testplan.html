@@ -1,1 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Plan • Mountain Coders</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e2e8f0;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 25px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #f8fafc;
+    }
+
+    header p {
+      color: #94a3b8;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 20px 60px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.86);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-title {
+      color: #38bdf8;
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 12px;
+    }
+
+    h3 {
+      color: #22c55e;
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      color: #f8fafc;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin: 10px 0;
+    }
+
+    ul, ol {
+      color: #cbd5e1;
+      line-height: 1.7;
+      padding-left: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      color: #cbd5e1;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th, td {
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    th {
+      background: rgba(56, 189, 248, 0.18);
+      color: #f8fafc;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255,255,255,0.025);
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Test Plan</h1>
+  <p>Mountain Coders</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="weekly.html">Weekly Updates</a>
+  <a href="overview.html">Project Overview</a>
+  <a href="srs.html">SRS</a>
+</nav>
+
+<div class="container">
+
+  <section class="card">
+    <h2 class="section-title">Purpose of the Document</h2>
+    <p>This document details and provides the framework for the testing process to utilize the Degree Admin project for CS460W that the group has completed.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Table of Contents</h2>
+    <ol>
+      <li>Introduction</li>
+      <li>Scope</li>
+      <li>Testing Strategy</li>
+      <li>Environment Requirements</li>
+      <li>Dependencies</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Introduction</h2>
+
+    <h3>Purpose</h3>
+    <p>Our testing strategy primarily existed as hosting a series of smaller testing periods every time that a new part of the project was implemented in the user interface. This testing process included testing multiple cases from the new implemented portion as well as additional testing to ensure that the new part of the code didn’t break what was already there before each testing session. If anything ended up breaking or otherwise not working as intended, the group would return to iron out the mistakes and test again.</p>
+
+    <h3>Project Overview</h3>
+    <p>The project was a Degree Admin database that would allow students, faculty, and administrators to view and update different aspects of their school accounts. These aspects included schedules, majors and minors, passwords, and co-op opportunities. Each one of these areas needed to be developed and tested separately, and user login needed to ensure that each different type of user would be  interacting with a different interface with different levels of permissions once a successful login occurred.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Scope</h2>
+
+    <h3>In-Scope</h3>
+    <p>As mentioned in section 1.2, there are many parts of the project that will be tested by our group members. The login interface and redirections to different user homepages is the first priority. After that, allowing the user to change their password according to the password specifications (12 characters, at least one uppercase letter, at least one lowercase letter, at least one number, and at least one special character). The next priority will be checking to see whether administrators can add or remove courses from the available courses catalog, as well as test their ability to change any person’s username and password. Co-op requests as well as Major/Minor change requests need to be tested on both student and faculty levels as well. Profile information must be displayed on each user type’s profiles, and faculty members need to be able to view their advisees. Faculty members and administrators need to be able to change course requirements for a major or minor, and administrators need to have the ability to add or delete users and reassign advisors and advisees.</p>
+
+    <h3>Out-of-Scope</h3>
+    <p>Due to the time constraints and our inability to complete some portions of the project, we will not be able to test a multi-semester schedule implementation. Likewise, we will not be testing course prerequisite requirements, even if they are present in the project’s database.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Testing Strategy</h2>
+
+    <h3>Test Objectives</h3>
+    <p>Each testing piece within our scope must be tested, both on their own as well as in tandem with the other pieces. Tests should ensure that implementing a new piece doesn’t cause previous pieces to stop working as intended.</p>
+
+    <h3>Test Assumptions</h3>
+    <p>This project assumes that a student user has taken any prerequisite courses required for the courses they are actively taking. To mitigate this, we are making sure that students don’t register for a course and its prerequisite at the same time. We will operate with those ideas in mind, and we will continue on as planned.</p>
+
+    <h3>Data Approach</h3>
+    <p>We will approach this data from all relevant user types’ perspectives. For example, the co-op request testing will require testing for a student user as well as a faculty member perspective. Another example is the user login. We must test the login procedure from a student, faculty, and administrator point of view to ensure that each type is taken to the correct profile page.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Level of Testing</h2>
+
+    <table>
+      <tr>
+        <th>Test</th>
+        <th>Description</th>
+        <th>Responsible Parties</th>
+      </tr>
+      <tr>
+        <td>Login Interface</td>
+        <td>Login works based on username and password; User type is detected and redirects user to specific homepage</td>
+        <td>Mori Kreider</td>
+      </tr>
+      <tr>
+        <td>Password Change</td>
+        <td>Each user is able to change their own password as long as it fits the password criteria</td>
+        <td>Mori Kreider</td>
+      </tr>
+      <tr>
+        <td>Admin add/remove courses</td>
+        <td>Administrators need to be able to add or remove a course from the currently available options; This will auto-unenroll any faculty and students</td>
+        <td>Natasha Williams</td>
+      </tr>
+      <tr>
+        <td>Admin username/password change</td>
+        <td>Administrators need to be able to change any users’ username or password as long as they fit the username and password requirements</td>
+        <td>Tris Houle</td>
+      </tr>
+      <tr>
+        <td>Co-op requests for faculty/students</td>
+        <td>Students need to be able to request co-ops for specific semesters. Faculty advisor can either accept or deny the change. This will reflect in the student’s requests</td>
+        <td>Mori Kreider</td>
+      </tr>
+      <tr>
+        <td>Major and Minor change requests for faculty/students</td>
+        <td>Students need to be able to request a new major(s) or minor(s). Faculty advisor can either accept or deny the change. This will reflect in the student’s requests as well as on their profile</td>
+        <td>Mori Kreider</td>
+      </tr>
+      <tr>
+        <td>Profile Information listed and accurate</td>
+        <td>Profile information must accurately list role, majors and minors, full name, username, and other important information. This updates based on other test results</td>
+        <td>Mori Kreider</td>
+      </tr>
+      <tr>
+        <td>Faculty members view advisees</td>
+        <td>Faculty members can view the student names and ID numbers of the students they are currently advising</td>
+        <td>Tris Houle</td>
+      </tr>
+      <tr>
+        <td>Change Course requirements for faculty/admin</td>
+        <td>Faculty or administrators can successfully change which courses are required to complete a specific major or minor</td>
+        <td>Natasha Williams</td>
+      </tr>
+      <tr>
+        <td>Admins add/delete users</td>
+        <td>Administrators can add new users of any role as well as delete users; This reflects throughout the database website</td>
+        <td>Natasa Williams</td>
+      </tr>
+      <tr>
+        <td>Admins reassign advisors to advisees</td>
+        <td>Administrators can change who a student’s faculty advisor is as well as assign advisors to students who currently do not have any advisors</td>
+        <td>Tris Houle</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Environment Requirements</h2>
+
+    <h3>Test Environments</h3>
+    <ul>
+      <li>MYSQL and Apache for php are required to run the project</li>
+      <li>The database is hosted locally on the tester’s device and opened through an internet window.</li>
+      <li>MYSQL file setup.sql must be reloaded into the database before any internet window is opened.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Dependencies</h2>
+    <p>Any project testing wholly depended on whether the required php or MYSQL worked at that moment on each team member’s devices. There were many instances where a different group member needed to take up someone else’s testing due to the original member’s computer not registering the programs. This combined with the deadline and busy schedules to see the project testing perhaps not be as efficient as it could have been.</p>
+  </section>
+
+</div>
+
+</body>
+</html>
 
