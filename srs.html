@@ -1,1 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SRS • DegreeAdmin System</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e2e8f0;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 25px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #f8fafc;
+    }
+
+    header p {
+      color: #94a3b8;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 20px 60px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.86);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-title {
+      color: #38bdf8;
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 12px;
+    }
+
+    h3 {
+      color: #22c55e;
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      color: #f8fafc;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin: 10px 0;
+    }
+
+    ul, ol {
+      color: #cbd5e1;
+      line-height: 1.7;
+      padding-left: 24px;
+    }
+
+    .requirements p {
+      margin: 6px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      color: #cbd5e1;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th, td {
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(56, 189, 248, 0.18);
+      color: #f8fafc;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255,255,255,0.025);
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Software Requirements Specification (SRS)</h1>
+  <p>DegreeAdmin System • Mountain Coders (Mori, Natasha, Tris)</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="weekly.html">Weekly Updates</a>
+  <a href="overview.html">Project Overview</a>
+  <a href="testplan.html">Test Plan</a>
+</nav>
+
+<div class="container">
+
+  <section class="card">
+    <h2 class="section-title">1. Introduction</h2>
+
+    <h3>1.1 Purpose</h3>
+    <p>The purpose of this Software Requirements Specification is to define the functional and non-functional requirements for DegreeAdmin, a web based academic planning system. This document describes the intended behavior of the system, its users, system features, constraints, and requirements.</p>
+    <p>DegreeAdmin is designed to help students, faculty, and admins manage degree progress, academic requirements, course planning, and co-op requests in a centralized system.</p>
+
+    <h3>1.2 Scope</h3>
+    <p>DegreeAdmin provides a digital platform for managing academic planning. The system allows students to view and manage majors, minors, course requirements, prerequisites, enrollments, and co-op requests. Faculty users can advise students and approve said co-op requests. Administrative users can manage courses, accounts, and advising relationships.</p>
+    <p>The current system includes authentication, user role handling, co-op request management, faculty-student advising relationships, course enrollments, major and minor requirement tracking, and prerequisite relationships. Future versions are expected to implement improved scheduling, course visualization, administrative features, and improvements to the overall interface.</p>
+
+    <h3>1.3 Project Overview</h3>
+    <p>DegreeAdmin is intended to reduce confusion in academic planning. Students often struggle to understand complex degree requirements, especially when managing multiple majors or minors. They may also have difficulty determining prerequisites, course availability, schedule conflicts, and whether they are on track to graduate on time. Faculty advising can also become time-consuming and inconsistent when handled manually.</p>
+    <p>DegreeAdmin addresses these issues by providing a structured web application where users can access degree information, track requirements, submit requests, and manage academic relationships.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">2. Overall Description</h2>
+
+    <h3>2.1 Product Perspective</h3>
+    <p>DegreeAdmin is a standalone web application built using PHP, MySQL, and CSS. The system uses a database to store user information, courses, majors, minors, prerequisites, enrollments, advising assignments, and co-op requests.</p>
+    <p>The system is role-based. When users log in, they are redirected to a dashboard based on their assigned role: student, faculty, or system administrator.</p>
+
+    <h3>2.2 Product Functions</h3>
+    <ol>
+      <li>User authentication</li>
+      <li>Role-based dashboards</li>
+      <li>Student profile viewing</li>
+      <li>Password changing</li>
+      <li>Major and minor requirement tracking</li>
+      <li>Course prerequisite tracking</li>
+      <li>Faculty advising assignments</li>
+      <li>Student course enrollment tracking</li>
+      <li>Student co-op request submission</li>
+      <li>Faculty co-op approval or denial</li>
+      <li>Administrative course and account management</li>
+    </ol>
+
+    <h3>2.3 User Classes and Characteristics</h3>
+
+    <h4>2.3.1 Student Users</h4>
+    <p>Student users are the primary users of the academic planning service. They need access to their degree information, majors, minors, course requirements, schedules, enrollments, and co-op requests.</p>
+    <p>Student users shall be able to:</p>
+    <ul>
+      <li>View profile information</li>
+      <li>View selected majors and minors</li>
+      <li>View required courses for majors and minors</li>
+      <li>Submit co-op requests</li>
+      <li>View co-op request statuses</li>
+      <li>View schedule or enrollment information</li>
+      <li>Change their password</li>
+    </ul>
+
+    <h4>2.3.2 Faculty Users</h4>
+    <p>Faculty users are responsible for advising students and reviewing student requests.</p>
+    <p>Faculty users shall be able to:</p>
+    <ul>
+      <li>View assigned advisees</li>
+      <li>View student academic information</li>
+      <li>Approve or deny co-op requests</li>
+      <li>Provide guidance to students</li>
+      <li>Change their password</li>
+    </ul>
+
+    <h4>2.3.3 Administrative Users</h4>
+    <p>Administrative users manage the system’s academic and user data.</p>
+    <p>Admin users shall be able to:</p>
+    <ul>
+      <li>Add courses</li>
+      <li>Delete courses</li>
+      <li>Manage user accounts</li>
+      <li>Remove accounts</li>
+      <li>Assign faculty and students to each other</li>
+      <li>Access administrative dashboard functions</li>
+    </ul>
+
+    <h3>2.4 Operating Environment</h3>
+    <p>The system shall operate in a web browser environment.</p>
+    <p>Expected environment:</p>
+    <ul>
+      <li>Frontend: HTML/CSS</li>
+      <li>Backend: PHP</li>
+      <li>Database: MySQL</li>
+      <li>Browser: Any modern web browser (Chrome, Firefox, Edge, etc)</li>
+      <li>Server: Local or hosted web server capable of running PHP and MySQL</li>
+    </ul>
+
+    <h3>2.5 Design and Implementation Constraints</h3>
+    <p>The system shall be implemented using:</p>
+    <ul>
+      <li>PHP for server-side page logic</li>
+      <li>MySQL for database storage</li>
+      <li>CSS for visual flair</li>
+    </ul>
+    <p>Some constraints are:</p>
+    <ul>
+      <li>Users must be authenticated before accessing role-specific pages</li>
+      <li>User permissions must be based on role</li>
+      <li>Database relationships must preserve academic data integrity</li>
+      <li>Password validation must follow the system’s password rules</li>
+    </ul>
+
+    <h3>2.6 Assumptions and Dependencies</h3>
+    <p>The system assumes:</p>
+    <ul>
+      <li>Users already exist in the database or are created by the administrator</li>
+      <li>Course, major, minor, and prerequisite data are entered into the database</li>
+      <li>Each user has one assigned role</li>
+      <li>Students may have multiple majors or minors</li>
+      <li>Faculty may advise multiple students</li>
+      <li>Co-op requests are reviewed by faculty users</li>
+      <li>The application depends on a functioning MySQL database and PHP server.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">3. External Interface Requirements</h2>
+
+    <h3>3.1 User Interface Requirements</h3>
+    <p>The system shall provide web pages for:</p>
+    <ul>
+      <li>Login</li>
+      <li>Logout</li>
+      <li>Student dashboard</li>
+      <li>Faculty dashboard</li>
+      <li>Admin dashboard</li>
+      <li>Profile information</li>
+      <li>Password change</li>
+      <li>Co-op request submission</li>
+      <li>Co-op request review</li>
+      <li>Course viewing</li>
+      <li>Advising and enrollment viewing</li>
+    </ul>
+    <p>The interface should be simple, readable, and organized by user role.</p>
+
+    <h3>3.2 Hardware Interface Requirements</h3>
+    <p>No special hardware required. Users shall access the system through a device capable of running a web browser, such as:</p>
+    <ul>
+      <li>Desktop computer</li>
+      <li>Laptop</li>
+      <li>Tablet</li>
+    </ul>
+
+    <h3>3.3 Software Interface Requirements</h3>
+    <p>The system shall interact with:</p>
+    <ul>
+      <li>A MySQL database</li>
+      <li>PHP server-side scripts</li>
+      <li>Browser-based HTML/CSS pages</li>
+    </ul>
+    <p>The database shall store information for:</p>
+    <ul>
+      <li>Users</li>
+      <li>Students</li>
+      <li>Faculty</li>
+      <li>System administrators</li>
+      <li>Courses</li>
+      <li>Majors</li>
+      <li>Minors</li>
+      <li>Major requirements</li>
+      <li>Minor requirements</li>
+      <li>Course prerequisites</li>
+      <li>Enrollments</li>
+      <li>Advising assignments</li>
+      <li>Co-op requests</li>
+    </ul>
+
+    <h3>3.4 Communication Interface Requirements</h3>
+    <p>The system shall use standard web communication between the client browser and the server. Database communication shall occur between PHP scripts and the MySQL database.</p>
+  </section>
+
+  <section class="card requirements">
+    <h2 class="section-title">4. System Features and Functional Requirements</h2>
+
+    <div class="grid">
+      <div class="mini-card"><h3>4.1 Authentication and Login</h3><h4>Description</h4><p>The system shall allow users to log in using a username and password. After successful authentication, users shall be redirected to the correct dashboard based on their role.</p><h4>Functional Requirements</h4><p>FR-1: The system shall provide a login page.</p><p>FR-2: The system shall require users to enter a username and password.</p><p>FR-3: The system shall validate entered credentials against stored user records</p><p>FR-4: The system shall display an error message when credentials are invalid.</p><p>FR-5: The system shall create a session when login is successful.</p><p>FR-6: The system shall redirect student users to the student dashboard.</p><p>FR-7: The system shall direct faculty users to the faculty dashboard.</p><p>FR-8: The system shall redirect administrative users to the administrator dashboard.</p></div>
+
+      <div class="mini-card"><h3>4.2 Logout</h3><h4>Description</h4><p>The system shall allow users to securely log out of their account.</p><h4>Functional Requirements</h4><p>FR-9: The system shall provide a logout option</p><p>FR-10: The system shall destroy the user session when logout is selected.</p><p>FR-11: The system shall redirect users to the login page after logout.</p><p>FR-12: The system shall prevent logged-out users from accessing protected pages.</p></div>
+
+      <div class="mini-card"><h3>4.3 Password Change</h3><h4>Description</h4><p>The system shall allow users to change their password from their profile page.</p><h4>Functional Requirements</h4><p>FR-13: The system shall provide a change password page.</p><p>FR-14: The system shall require the user to enter the current password.</p><p>FR-15: The system shall verify that the current password matches the stored password.</p><p>FR-16: The system shall require the user to enter a new password.</p><p>FR-17: The system shall require the user to confirm the new password.</p><p>FR-18: The system shall verify that the new password and confirmation match.</p><p>FR-19: The system shall enforce password rules.</p><p>FR-20: The system shall update the password when all validation checks pass.</p><p>FR-21: The system shall display an error message when password validation fails.</p><p>To note as well, passwords must be exactly 12 characters and include uppercase, lowercase, numbers and symbols.</p></div>
+
+      <div class="mini-card"><h3>4.4 Student Profile</h3><h4>Description</h4><p>The system shall allow student users to view their personal academic information.</p><h4>Functional Requirements</h4><p>FR-22: The system shall display the student’s full name.</p><p>FR-23: The system shall display the student’s username.</p><p>FR-24: The system shall display the student’s role.</p><p>FR-25: The system shall display the student’s assigned faculty advisor.</p><p>FR-26: The system shall display the student’s majors.</p><p>FR-27: The system shall display the student’s minors.</p><p>FR-28: The system shall provide access to the change password page from the profile page.</p></div>
+
+      <div class="mini-card"><h3>4.5 Major and Minor Management</h3><h4>Description</h4><p>The system shall support students having multiple majors and minors. Each major and minor shall be linked to its required courses.</p><h4>Functional Requirements</h4><p>FR-29: The system shall store major information.</p><p>FR-30: The system shall store minor information.</p><p>FR-31: The system shall associate students with one or more majors.</p><p>FR-32: The system shall associate students with one or more minors.</p><p>FR-33: The system shall link each major to required courses.</p><p>FR-34: The system shall link each minor to required courses.</p><p>FR-35: The system shall allow students to view courses required by their selected majors.</p><p>FR-36: The system shall allow students to view courses required by their selected minors.</p><p>To note, major requirements and minor requirements link each major or minor to the specific courses required for completion.</p></div>
+
+      <div class="mini-card"><h3>4.6 Course Prerequisites</h3><h4>Description</h4><p>The system shall maintain prerequisite relationships between courses.</p><h4>Functional Requirements</h4><p>FR-37: The system shall store course information.</p><p>FR-38: The system shall store prerequisite relationships between courses.</p><p>FR-39: The system shall allow users to view prerequisite requirements for courses.</p><p>FR-40: The system shall prevent inaccurate prerequisite relationships by maintaining database references between course records.</p><p>To note, course prerequisites are links between each course and the course that must be taken before it.</p></div>
+
+      <div class="mini-card"><h3>4.7 Advising Relationships</h3><h4>Description</h4><p>The system shall connect faculty advisors to the students they advise.</p><h4>Functional Requirements</h4><p>FR-41: The system shall store faculty records.</p><p>FR-42: The system shall store student records.</p><p>FR-43: The system shall associate students with faculty advisors.</p><p>FR-44: The system shall allow faculty to view assigned advisees.</p><p>FR-45: The system shall allow students to view their assigned advisor.</p><p>To note, the advising/enrollment system connects faculty to the students they advise.</p></div>
+
+      <div class="mini-card"><h3>4.8 Student Course Enrollments</h3><h4>Description</h4><p>The system shall connect students to courses they are taking.</p><h4>Functional Requirements</h4><p>FR-46: The system shall store course offering information.</p><p>FR-47: The system shall associate students with course offerings.</p><p>FR-48: The system shall allow students to view current course enrollments.</p><p>FR-49: The system shall allow faculty or administrators to view student enrollment information where appropriate.</p><p>To note, enrollments connect students to the courses they take.</p></div>
+
+      <div class="mini-card"><h3>4.9 Co-op Request Submission</h3><h4>Description</h4><p>Student users shall be able to submit co-op requests by selecting a semester and year.</p><h4>Functional Requirements</h4><p>FR-50: The system shall provide a co-op request form for students.</p><p>FR-51: The system shall require students to select a semester.</p><p>FR-52: The system shall require students to enter or select a year.</p><p>FR-53: The system shall submit the co-op request to the database.</p><p>FR-54: The system shall assign a default status of pending to new co-op requests.</p><p>FR-55: The system shall display the student’s submitted co-op requests.</p><p>FR-56: The system shall display the status of each co-op request.</p></div>
+
+      <div class="mini-card"><h3>4.10 Co-op Request Approval</h3><h4>Description</h4><p>Faculty users shall be able to view student co-op requests and approve or deny pending requests.</p><h4>Functional Requirements</h4><p>FR-57: The system shall display co-op requests to faculty users.</p><p>FR-58: The system shall show the student, semester, year, and status of each co-op request.</p><p>FR-59: The system shall provide approve and deny actions for pending requests.</p><p>FR-60: The system shall update the co-op request status when approved.</p><p>FR-61: The system shall update the co-op request status when denied.</p><p>FR-62: The system shall prevent further action on requests that are already approved or denied.</p></div>
+
+      <div class="mini-card"><h3>4.11 Administrator Course Management</h3><h4>Description</h4><p>Administrator users shall be able to manage course information.</p><h4>Functional Requirements</h4><p>FR-63: The system shall allow administrators to add courses.</p><p>FR-64: The system shall allow administrators to delete courses.</p><p>FR-65: The system shall allow administrators to edit course-related information where implemented.</p><p>FR-66: The system shall restrict course management functions to administrator users.</p><p>To note, adding and deleting courses is an administrator ability.</p></div>
+
+      <div class="mini-card"><h3>4.12 Administrator User Management</h3><h4>Description</h4><p>Administrator users shall be able to manage accounts and relationships between students and faculty.</p><h4>Functional Requirements</h4><p>FR-67: The system shall allow administrators to remove accounts.</p><p>FR-68: The system shall allow administrators to assign faculty to students.</p><p>FR-69: The system shall allow administrators to manage student-faculty advising relationships.</p><p>FR-70: The system shall restrict account management functions to administrator users.</p></div>
+    </div>
+
+    <div class="mini-card" style="margin-top:18px;"><h3>4.13 Schedule Planning</h3><h4>Description</h4><p>The system supports semester-by-semester schedule planning.</p><h4>Functional Requirements</h4><p>FR-71: The system should allow students to build semester schedules.</p><p>FR-72: The system should allow students to view schedules by semester or year.</p><p>FR-73: The system should check whether planned courses satisfy major or minor requirements.</p><p>FR-74: The system should identify prerequisite issues in planned schedules.</p><p>FR-75: The system should help students determine whether they are on track to graduate.</p></div>
+  </section>
+
+  <section class="card requirements">
+    <h2 class="section-title">5. Non-Functional Requirements</h2>
+    <div class="grid">
+      <div class="mini-card"><h3>5.1 Performance Requirements</h3><p>NFR-1: The system should load standard pages within 2 seconds under normal use.</p><p>NFR-2: The system should process login requests within 2 seconds.</p><p>NFR-3: The system should retrieve student, course, and co-op data efficiently from the database.</p><p>NFR-4: The system should support multiple users accessing the system at the same time.</p></div>
+      <div class="mini-card"><h3>5.2 Security Requirements</h3><p>NFR-5: The system shall require authentication before accessing protected pages.</p><p>NFR-6: The system shall use role-based access control.</p><p>NFR-7: Students shall not access administrator-only pages.</p><p>NFR-8: Faculty shall not access administrator-only pages.</p><p>NFR-9: Users shall only access functions appropriate to their assigned role.</p><p>NFR-10: The system shall validate password changes before updating stored credentials.</p><p>NFR-11: The system shall end user sessions when users log out.</p><p>NFR-12: The system should protect database operations from unauthorized access.</p></div>
+      <div class="mini-card"><h3>5.3 Usability Requirements</h3><p>NFR-13: The interface shall be simple and understandable for students, faculty, and administrators.</p><p>NFR-14: Each user role shall have a clear dashboard.</p><p>NFR-15: Buttons and navigation links shall clearly describe their actions.</p><p>NFR-16: Error messages shall clearly explain what went wrong.</p><p>NFR-17: Success messages shall confirm completed actions.</p></div>
+      <div class="mini-card"><h3>5.4 Reliability Requirements</h3><p>NFR-18: The system shall preserve user, course, and request data in the database.</p><p>NFR-19: The system shall prevent invalid database relationships where possible.</p><p>NFR-20: The system shall maintain accurate co-op request statuses.</p><p>NFR-21: The system shall prevent broken advising or enrollment relationships.</p></div>
+      <div class="mini-card"><h3>5.5 Maintainability Requirements</h3><p>NFR-22: The system code should be organized into separate PHP pages based on function.</p><p>NFR-23: CSS should be stored separately from PHP logic.</p><p>NFR-24: Database tables should use clear relationships and primary/foreign keys.</p><p>NFR-25: The system should be documented so future developers can continue implementation.</p></div>
+      <div class="mini-card"><h3>5.6 Portability Requirements</h3><p>NFR-26: The system should run on any server environment that supports PHP and MySQL.</p><p>NFR-27: The system should be accessible from modern web browsers.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">6. Database Requirements</h2>
+    <p>The system shall include database tables for the following entries:</p>
+    <div class="grid">
+      <div class="mini-card"><h3>6.1 Users</h3><p>Stores general account information.</p><p>Expected fields:</p><ul><li>user_id</li><li>first_name</li><li>last_name</li><li>username</li><li>password</li><li>user_role</li></ul></div>
+      <div class="mini-card"><h3>6.2 Students</h3><p>Stores student-specific records.</p><p>Expected fields:</p><ul><li>student_id</li><li>user_id</li></ul></div>
+      <div class="mini-card"><h3>6.3 Faculty</h3><p>Stores faculty-specific records</p><p>Expected fields:</p><ul><li>faculty_id</li><li>user_id</li></ul></div>
+      <div class="mini-card"><h3>6.4 System Administrators</h3><p>Stores administrator-specific records.</p><p>Expected fields:</p><ul><li>sysAdmin_id</li><li>user_id</li></ul></div>
+      <div class="mini-card"><h3>6.5 Courses</h3><p>Stores course information.</p><p>Expected fields:</p><ul><li>course_id</li><li>course_code</li><li>course_name</li><li>Course_description</li></ul></div>
+      <div class="mini-card"><h3>6.6 Majors</h3><p>Stores major information.</p><p>Expected fields:</p><ul><li>major_id</li><li>major_name</li></ul></div>
+      <div class="mini-card"><h3>6.7 Minors</h3><p>Stores minor information.</p><p>Expected fields:</p><ul><li>minor_id</li><li>minor_name</li></ul></div>
+      <div class="mini-card"><h3>6.8 Major Requirements</h3><p>Links majors to required courses.</p><p>Expected fields:</p><ul><li>major_id</li><li>course_id</li></ul></div>
+      <div class="mini-card"><h3>6.9 Minor Requirements</h3><p>Links minors to required courses.</p><p>Expected fields:</p><ul><li>minor_id</li><li>Course_id</li></ul></div>
+      <div class="mini-card"><h3>6.10 Course Prerequisites</h3><p>Links courses to prerequisite courses.</p><p>Expected fields:</p><ul><li>course_id</li><li>Prereq_id</li></ul></div>
+      <div class="mini-card"><h3>6.11 Advising</h3><p>Links faculty advisors to students.</p><p>Expected fields:</p><ul><li>faculty_id</li><li>student_id</li></ul></div>
+      <div class="mini-card"><h3>6.12 Enrollments</h3><p>Links students to course offerings.</p><p>Expected fields:</p><ul><li>student_id</li><li>offering_id</li></ul></div>
+      <div class="mini-card"><h3>6.13 Co-op Requests</h3><p>Stores students co-op requests.</p><p>Expected fields:</p><ul><li>coop_id</li><li>student_id</li><li>faculty_id</li><li>semester</li><li>year</li><li>status</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">7. Use Cases</h2>
+    <div class="grid">
+      <div class="mini-card"><h3>7.1 Use Case: User Logs In</h3><p>Actor: Student, Faculty, or Admin</p><p>Precondition: User has an account.</p><p>Main Flow:</p><ol><li>User opens the login page.</li><li>User enters username and password.</li><li>System validates credentials.</li><li>System identifies user role.</li><li>System redirects user to the correct dashboard.</li></ol><p>Postcondition: User is logged into the system.</p><p>Alternate Flow: If the credentials are invalid, an error message pops.</p></div>
+      <div class="mini-card"><h3>7.2 Use Case: Student Submits Co-op Request</h3><p>Actor: Student</p><p>Precondition: Student is logged in.</p><p>Main Flow:</p><ol><li>Student opens the co-op request page.</li><li>Student selects semester.</li><li>Student enters year.</li><li>Student submits the request.</li><li>System stores the request with pending status.</li><li>System displays the request in the student’s request list.</li></ol><p>Postcondition: Co-op request is stored and ready for faculty view.</p></div>
+      <div class="mini-card"><h3>7.3 Use Case: Faculty Reviews Co-op Request</h3><p>Actor: Faculty</p><p>Precondition: Faculty is logged in.</p><p>Main Flow:</p><ol><li>Faculty opens the co-op request page.</li><li>System displays pending requests.</li><li>Faculty selects approve or deny.</li><li>System updates the request status.</li></ol><p>Postcondition: Student request status is updated.</p></div>
+      <div class="mini-card"><h3>7.4 Use Case: Student Views Degree Requirements</h3><p>Actor: Student</p><p>Precondition: Student is logged in and has selected majors/minors.</p><p>Main Flow:</p><ol><li>Student opens course or requirement view.</li><li>System retrieves selected majors and minors.</li><li>System retrieves required courses.</li><li>System displays required courses to the student.</li></ol><p>Postcondition: Student can view required academic coursework.</p></div>
+      <div class="mini-card"><h3>7.5 Use Case: Administrator Assigns Advisor</h3><p>Actor: Administrator</p><p>Precondition: Admin is logged in.</p><p>Main Flow:</p><ol><li>Admin opens advising management page.</li><li>Admin selects a student.</li><li>Admin selects a faculty member.</li><li>System saves the advising relationship.</li></ol><p>Postcondition: Student is assigned to a faculty advisor.</p></div>
+    </div>
+  </section>
+
+  <section class="card requirements">
+    <h2 class="section-title">8. Data Validation Requirements</h2>
+    <p>DVR-1: Username and password fields shall not be empty during login.</p>
+    <p>DVR-2: Co-op request semester shall not be empty.</p>
+    <p>DVR-3: Co-op request year shall not be empty.</p>
+    <p>DVR-4: New passwords shall match confirmation passwords.</p>
+    <p>DVR-5: New passwords shall meet system password rules.</p>
+    <p>DVR-6: Course relationships shall reference valid course records.</p>
+    <p>DVR-7: Major requirement records shall reference valid major and course records.</p>
+    <p>DVR-8: Minor requirement records shall reference valid minor and course records.</p>
+    <p>DVR-9: Co-op request statuses shall be limited to valid values such as pending, approved, or denied.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">9. Access Control Requirements</h2>
+    <table>
+      <tr><th>Feature</th><th>Student</th><th>Faculty</th><th>Admin</th></tr>
+      <tr><td>Login</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Logout</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Change password</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>View own profile</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>View majors/minors</td><td>Yes</td><td>Limited</td><td>Yes</td></tr>
+      <tr><td>Submit co-op request</td><td>Yes</td><td>No</td><td>No</td></tr>
+      <tr><td>Approve/deny co-op request</td><td>No</td><td>Yes</td><td>No</td></tr>
+      <tr><td>View advisees</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Add/delete courses</td><td>No</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Remove accounts</td><td>No</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Assign faculty/students</td><td>No</td><td>No</td><td>Yes</td></tr>
+    </table>
+  </section>
+
+  <section class="card requirements">
+    <h2 class="section-title">10. System Constraints</h2>
+    <p>SC-1: The system shall use MySQL as the database.</p>
+    <p>SC-2: The system shall use PHP for server-side page logic.</p>
+    <p>SC-3: The system shall use CSS for styling.</p>
+    <p>SC-4: The system shall operate as a web application.</p>
+    <p>SC-5: The system shall separate users by role.</p>
+    <p>SC-6: Some planned features, such as full schedule editing and visualization, may not be fully implemented in the current version.</p>
+  </section>
+
+</div>
+
+</body>
+</html>
 
